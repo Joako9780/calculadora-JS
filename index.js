@@ -13,6 +13,11 @@ botones.forEach(boton => {
 
         const botonApretado = boton.textContent;  // Guardamos el contenido del boton apretado en una variable
         
+        if (pantalla.textContent.length === 18) {
+            pantalla.textContent = "Error";
+            return;  // Limitar la cantidad de caracteres en la pantalla a 20
+        }
+
         if(boton.id === "c") {
             pantalla.textContent = "0";  // Si apretamos el boton C, la pantalla vuelve a 0
             return;  // Salimos de la funcion para que no siga ejecutando el resto del codigo
@@ -38,10 +43,10 @@ botones.forEach(boton => {
 
     /* Mostramos en la pantalla de la calculadora la informacion de cada boton */    
 
-        if(pantalla.textContent === "0" || pantalla.textContent.textContent === "Error") {
+        if(pantalla.textContent === "0" || pantalla.textContent === "Error") {
             pantalla.textContent = botonApretado;  // Si la pantalla tiene un 0, lo reemplazamos por el contenido del boton
         } else {
-        pantalla.textContent += botonApretado;  // Cada vez que apretemos un boton, se va a agregar su contenido a la pantalla
+            pantalla.textContent += botonApretado;  // Cada vez que apretemos un boton, se va a agregar su contenido a la pantalla
         }
     })
 })
