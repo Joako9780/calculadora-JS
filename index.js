@@ -36,17 +36,12 @@ botones.forEach(boton => {
             return;
         }
 
-        if (pantalla.textContent.length === 19) {
-            pantalla.textContent = "Error";
-            return;  // Limitar la cantidad de caracteres en la pantalla a 20
-        }
-
     /* Mostramos en la pantalla de la calculadora la informacion de cada boton */    
 
-        if(pantalla.textContent === "0" || pantalla.textContent === "Error") {
+        if(pantalla.textContent === "0" || pantalla.textContent.textContent === "Error") {
             pantalla.textContent = botonApretado;  // Si la pantalla tiene un 0, lo reemplazamos por el contenido del boton
         } else {
-            pantalla.textContent += botonApretado;  // Cada vez que apretemos un boton, se va a agregar su contenido a la pantalla
+        pantalla.textContent += botonApretado;  // Cada vez que apretemos un boton, se va a agregar su contenido a la pantalla
         }
     })
 })
