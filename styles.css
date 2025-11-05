@@ -2,14 +2,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: monospace;
 }
 
 body {
     min-height: 100vh;
     background-color: #090c31;
-    display: grid;
-    place-items: center;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* centrar hijos horizontalmente (.calculadora) */
+}
+
+h1 {
+    color: white;
+    font-size: 3rem;
+    margin-left: 2rem;
+
+    /* Override del centrado del contenido */
+    align-self: flex-start;
+    margin-top: 3rem;
 }
 
 .calculadora {
@@ -18,7 +30,9 @@ body {
     width: 350px;
     max-width: 100%;
     padding: 1.5rem;
+    border: 1px solid #000;
     border-radius: 1rem;
+    margin-top: 2rem;
 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -34,6 +48,7 @@ body {
     padding: 1.5rem;
     font-size: 2rem;
     text-align: right;
+    border: 1px solid #000;
     border-radius: .5rem;
     margin-bottom: 1rem;
     font-family: monospace;
@@ -41,12 +56,14 @@ body {
 }
 
 .btn {
-    background-color: #15173c;
+    background-color: #090c31;
     color: white;
+    font-size: 20px;
     border: none;
     padding: 1.5rem .5rem;
     cursor: pointer;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
+    transition: 0.2s;
 
     display: flex;
     justify-content: center;
@@ -54,7 +71,7 @@ body {
 }
 
 .btn:hover {
-    background-color: #090c31;
+    background-color: #050834;
 }
 
 #cero {
@@ -62,6 +79,14 @@ body {
     grid-column-end: 3;
     /* grid-column: 1 / 3; */
     /* grid-column: span 2;    Se estira 2 columnas */
+}
+
+#c {
+    background-color: #e6394a;
+}
+
+#c:hover {
+    background-color: #e65766;
 }
 
 #igual {
